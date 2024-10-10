@@ -133,30 +133,6 @@ Use Helmet to set secure HTTP headers (e.g., to prevent cross-site scripting att
 
 ---
 
-Step 3: Implement Authentication and RBAC
-Goal: Set up user authentication (JWT) and RBAC to ensure only authorized users access certain parts of the API.
-
-1. Authentication Middleware (middleware/authMiddleware.js):
-   Responsibility: Verify JWT tokens and attach the authenticated user to the request object.
-2. Role Middleware (middleware/roleMiddleware.js):
-   Responsibility: Check if the authenticated user has the appropriate role.
-   Reasoning:
-   Using separate middleware files keeps authentication and role-based logic separate from business logic, adhering to SRP.
-   Step 4: Implement Task CRUD Operations
-   Goal: Create routes and controllers for task management.
-
-Task Controller (controllers/taskController.js):
-Create Task: Handles the creation of a task and associates it with the user.
-
-Get Tasks: Retrieves tasks only for the logged-in user.
-
-Update/Delete Task: Validates ownership before making any changes.
-
-Reasoning: Keeping controller logic separate allows for easier testing and follows the Interface Segregation Principle (ISP) by not forcing controllers to handle unrelated concerns.
-
-Step 5: Test the API
-Goal: Test each API endpoint using Postman or curl to ensure all CRUD operations and authentication work as expected.
-
 Test Scenarios:
 User Registration and Login: Verify JWT token is returned.
 Task CRUD: Test creating, updating, deleting tasks, and ensure only the task owner can perform these operations.

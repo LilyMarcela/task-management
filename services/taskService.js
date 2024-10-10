@@ -4,6 +4,7 @@ const createOne = async (userId, taskdata) => {
   return await Task.create({
     title: taskdata.title,
     description: taskdata.description,
+    completed: taskdata.completed,
     userId,
   });
 };

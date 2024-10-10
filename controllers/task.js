@@ -4,7 +4,9 @@ const taskService = require("../services/taskService");
 const createOne = async (req, res) => {
   try {
     const task = await taskService.createOne(req.user.id, req.body);
+    res.status(201).json(task);
   } catch (error) {
+    console.log(error);
     res.status(500).json({ error: "Error creating" });
   }
 };

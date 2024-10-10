@@ -14,5 +14,3 @@ User.hasMany(Task, { foreignKey: "userId" });
 Task.belongsTo(User, { foreignKey: "userId" });
 
 module.exports = { User, Role, Task, UserRoles };
-
-// explain how fks will look like here

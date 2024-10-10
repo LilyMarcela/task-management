@@ -24,3 +24,5 @@ router.delete(
   authMiddleware,
   roleMiddleware("admin", deleteOne)
 );
+
+module.exports = router;
